@@ -339,69 +339,134 @@
         <!-- THEN PHONE VERSION IS OPEN -->
         <!-- <div id="PHONE"><b>P</b></div> -->
 
-        <!-- NAVI BAR -->
-        <div id="navi-bar-container-id">
-            <div id="home-img-icon-id">
-                <a href="" style="text-decoration: none; color: black;">
-                    <img width="200px" height="65px" src="https://i.ibb.co/4N4Fqs2/website-navig-logo.png">
-                </a>
+        <!-- PHONE NAVI MENU CONTAINER -->
+        <div id="phone-navi-menu-container-id" style="display: none; width: 90%; height: 90%; position: fixed; z-index: 1000; background-color: white; margin: 20px 0px 0px 0px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); right: 0; overflow: hidden; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
+            <!-- CLOSE BTN -->
+            <div onclick="close_phone_naviMenu();" class="close-phone-navi-btn">
+                <p style="font-weight: 700; color: red;">close</p>
             </div>
 
-            <div id="navi-options-id">
-                <!-- HOME -->
-                <div id="navi-btn-id">
-                    <a href="" style="text-decoration: none; color: black;">
-                        <p>HOME</p>
-                    </a>
-                </div>
+            <!-- PHONE MENU OPTIONS CONTAINER -->
+            <div style="display: block; width: 100%; height: 100%; overflow: scroll; padding: 0px 0px 80px 0px;">
+                <div style="height: 500px;">
+                    <!-- HOME - PHONE MENU OPT --> 
+                    <div class="phone-menu-opt-class">
+                        <a href="rockchurchnn757.github.io/Website/index.html" style="display: flex; margin: auto; width: 100%; height: 100%;">
+                            <p style="font-weight: 700; color: gray; font-size: 20px; margin: auto;">HOME</p>
+                        </a>
+                    </div>
 
-                <!-- ABOUT US -->
-                <div id="navi-btn-id">
-                    <a href="" style="text-decoration: none; color: black;">
-                        <p>ABOUT US</p>
-                    </a>
-                </div>
+                    <!-- ABOUT US - PHONE MENU OPT -->
+                    <div class="phone-menu-opt-class">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-about-us.html" style="display: flex; margin: auto; width: 100%; height: 100%;">
+                            <p style="font-weight: 700; color: gray; font-size: 20px; margin: auto;">ABOUT US</p>
+                        </a>
+                    </div>
 
-                <!-- STREAMING -->
-                <div id="navi-btn-id">
-                    <a href="" style="text-decoration: none; color: black;">
-                        <p>STREAMING</p>
-                    </a>
-                </div>
+                    <!-- STREAMING - PHONE MENU OPT -->
+                    <div class="phone-menu-opt-class">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-streaming-page.html" style="display: flex; margin: auto; width: 100%; height: 100%;">
+                            <p style="font-weight: 700; color: gray; font-size: 20px; margin: auto;">STREAMING</p>
+                        </a>
+                    </div>
 
-                <!-- CONNECT -->
-                <div id="navi-btn-id">
-                    <a href="" style="text-decoration: none; color: black;">
-                        <p>CONNECT</p>
-                    </a>
-                </div>
-            
-                <!-- EVENTS -->
-                <div id="navi-btn-id">
-                    <a href="" style="text-decoration: none; color: black;">
-                        <p>PRAYER</p>
-                    </a>
-                </div>
-            
-                <!-- GIVE -->
-                <div id="navi-btn-id">
-                    <a href="" style="text-decoration: none; color: black;">
-                        <p>GIVE</p>
-                    </a>
-                </div>
-            </div>
+                    <!-- PRAYER - PHONE MENU OPT -->
+                    <div class="phone-menu-opt-class">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-prayer-page.html" style="display: flex; margin: auto; width: 100%; height: 100%;">
+                            <p style="font-weight: 700; color: gray; font-size: 20px; margin: auto;">PRAYER</p>
+                        </a>
+                    </div>
 
-            <div id="navi-options-PHONE-menu-btn">
-                <div style="float: right; width: 55px; height: 90px; overflow: hidden; padding: 0px 20px 0px 0px;">
-                    <svg id="Layer_12" data-name="Layer 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.69 132.69">
-                        <circle class="cls-1-1" cx="66.35" cy="66.35" r="58.35"/>
-                        <line class="cls-2-1" x1="36.83" y1="44.11" x2="95.82" y2="44.11"/>
-                        <line class="cls-2-1" x1="36.85" y1="67.12" x2="95.84" y2="67.12"/>
-                        <line class="cls-2-1" x1="36.85" y1="90.11" x2="95.84" y2="90.11"/>
-                    </svg>
+                    <!-- EVENTS - PHONE MENU OPT -->
+                    <div class="phone-menu-opt-class">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-events-page.html" style="display: flex; margin: auto; width: 100%; height: 100%;">
+                            <p style="font-weight: 700; color: gray; font-size: 20px; margin: auto;">EVENTS</p>
+                        </a>
+                    </div>
+
+                    <!-- GIVE - PHONE MENU OPT -->
+                    <div class="phone-menu-opt-class">
+                        <a href="https://app.easytithe.com/app/giving/rock7435215" style="display: flex; margin: auto; width: 100%; height: 100%;">
+                            <p style="font-weight: 700; color: gray; font-size: 20px; margin: auto;">GIVE</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+
+        
+        <!-- NAVI BAR -->
+            <div id="navi-bar-container-id">
+                <div id="home-img-icon-id">
+                    <a href="https://rockchurchnn757.github.io/Website/index.html" style="text-decoration: none; color: black; margin: auto;">
+                        <img width="200px" height="auto" src="https://i.ibb.co/4N4Fqs2/website-navig-logo.png">
+                    </a>
+                </div>
+
+                <div id="navi-options-id">
+                    <!-- HOME -->
+                    <div id="navi-btn-id">
+                        <a href="https://rockchurchnn757.github.io/Website/index.html" style="text-decoration: none; color: black;">
+                            <p>HOME</p>
+                        </a>
+                    </div>
+
+                    <!-- ABOUT US -->
+                    <div id="navi-btn-id">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-about-us.html" style="text-decoration: none; color: black;">
+                            <p>ABOUT US</p>
+                        </a>
+                    </div>
+
+                    <!-- STREAMING -->
+                    <div id="navi-btn-id">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-streaming-page.html" style="text-decoration: none; color: black;">
+                            <p>STREAMING</p>
+                        </a>
+                    </div>
+
+                    <!-- PRAYER -->
+                    <div id="navi-btn-id">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-prayer-page.html" style="text-decoration: none; color: black;">
+                            <p>PRAYER</p>
+                        </a>
+                    </div>
+                
+                    <!-- EVENTS -->
+                    <div id="navi-btn-id">
+                        <a href="https://rockchurchnn757.github.io/Website/rock-church-events-page.html" style="text-decoration: none; color: black;">
+                            <p>EVENTS</p>
+                        </a>
+                    </div>
+                
+                    <!-- GIVE -->
+                    <div id="navi-btn-id">
+                        <a href="https://app.easytithe.com/app/giving/rock7435215" style="text-decoration: none; color: black;">
+                            <p>GIVE</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- PHONE NAVI MENU BTN -->
+                <div id="navi-options-PHONE-menu-btn">
+                    <div onclick="open_phone_naviMenu();" style="display: flex; float: right; width: 65px; height: 65px; overflow: hidden; padding: 5px;">
+                        
+                        <div class="navi-option-btn">
+                            <center>
+                                <div style="width: 60%; height: 3px; background-color: gray; margin: 7px 0px 5px 0px;"></div>
+                                <div style="width: 60%; height: 3px; background-color: gray; margin: 0px 0px 5px 0px;"></div>
+                                <div style="width: 60%; height: 3px; background-color: gray;"></div>
+                            </center>
+                        </div>
+                        <!-- <svg id="Layer_12" data-name="Layer 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.69 132.69">
+                            <circle class="cls-1-1" cx="66.35" cy="66.35" r="58.35"/>
+                            <line class="cls-2-1" x1="36.83" y1="44.11" x2="95.82" y2="44.11"/>
+                            <line class="cls-2-1" x1="36.85" y1="67.12" x2="95.84" y2="67.12"/>
+                            <line class="cls-2-1" x1="36.85" y1="90.11" x2="95.84" y2="90.11"/>
+                        </svg> -->
+                    </div>
+                </div>
+            </div>
 
         <div class="erThang-container">
             <!-- HEADER - STREAMING -->
