@@ -393,9 +393,7 @@
         <!-- THEN PHONE VERSION IS OPEN -->
         <div id="PHONE"><b>P</b></div>
 
-
-        <div class="erThang-container">
-            <!-- PHONE NAVI MENU CONTAINER -->
+        <!-- PHONE NAVI MENU CONTAINER -->
         <div id="phone-navi-menu-container-id" style="display: none; width: 90%; height: 90%; position: fixed; z-index: 1000; background-color: white; margin: 20px 0px 0px 0px; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); right: 0; overflow: hidden; -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);">
             <!-- CLOSE BTN -->
             <div onclick="close_phone_naviMenu();" class="close-phone-navi-btn">
@@ -450,6 +448,7 @@
             </div>
         </div>
 
+        <div class="erThang-container">
             <!-- NAVI BAR -->
             <div id="navi-bar-container-id">
                 <div id="home-img-icon-id">
@@ -502,17 +501,27 @@
                     </div>
                 </div>
 
+                <!-- PHONE NAVI MENU BTN -->
                 <div id="navi-options-PHONE-menu-btn">
-                    <div style="float: right; width: 55px; height: 90px; overflow: hidden; padding: 0px 20px 0px 0px;">
-                        <svg id="Layer_12" data-name="Layer 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.69 132.69">
+                    <div onclick="open_phone_naviMenu();" style="display: flex; float: right; width: 65px; height: 65px; overflow: hidden; padding: 5px;">
+                        
+                        <div class="navi-option-btn">
+                            <center>
+                                <div style="width: 60%; height: 3px; background-color: gray; margin: 7px 0px 5px 0px;"></div>
+                                <div style="width: 60%; height: 3px; background-color: gray; margin: 0px 0px 5px 0px;"></div>
+                                <div style="width: 60%; height: 3px; background-color: gray;"></div>
+                            </center>
+                        </div>
+                        <!-- <svg id="Layer_12" data-name="Layer 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.69 132.69">
                             <circle class="cls-1-1" cx="66.35" cy="66.35" r="58.35"/>
                             <line class="cls-2-1" x1="36.83" y1="44.11" x2="95.82" y2="44.11"/>
                             <line class="cls-2-1" x1="36.85" y1="67.12" x2="95.84" y2="67.12"/>
                             <line class="cls-2-1" x1="36.85" y1="90.11" x2="95.84" y2="90.11"/>
-                        </svg>
+                        </svg> -->
                     </div>
                 </div>
             </div>
+
 
 
 
