@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Rock Church Events</title>
+        <style>
+            #PHONE {
+                position: fixed; 
+                bottom: 0;
+                width: 20px; 
+                height: 20px; 
+                background-color: purple; 
+                z-index: 1000;
+                color: white; 
+                display: none; 
+                right: 0;
+            }
+            @media screen and (max-width: 800px) {
+                #PHONE {
+                    display: block;
+                }
+            }
+
+            html, body {
+                margin: 0; 
+                width: 100%; 
+                background-color: #d9d9d9;
+            }
+
+            .erThang-container {
+                width: 80%; 
+                height: auto; 
+                background-color: white;
+                margin: auto;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+            }
+
+            @media screen and (max-width: 1500px) {
+                .erThang-container {
+                    width: 100%; 
+                }
+            }
+
+
+            #navi-bar-container-id {
+                /* NAVIGATION BAR */
+                display: flex; 
+                width: 100%; 
+                height: 90px; 
+                overflow: hidden; 
+            }
+            #home-img-icon-id {
+                width: 250px; 
+                height: 100%; 
+                overflow: hidden;
+                cursor: pointer;
+                margin: 5px 15px 5px 15px;
+                display: flex; 
+                justify-content: center;
+                float: left;
+            }
+            #navi-options-id {
+                float: right; 
+                width: 75%; 
+                height: 100%; 
+                overflow: hidden;
+                display: flex;
+            }
+            #navi-btn-id {
+                display: block; 
+                width: 16.6%; 
+                height: 100%; 
+                float: left;
+                cursor: pointer;
+                overflow: hidden;
+            }
+            #navi-btn-id p {
+                text-align: center;
+                margin: 20px 0px 0px 0px;
+                font-weight: 600;
+            }
+
+            #navi-options-PHONE-menu-btn {
+                float: right; 
+                width: 50%; 
+                height: 90px; 
+                display: none; 
+                overflow: hidden;
+                position: relative; 
+                padding: 15px 0px 0px 0px;
+                opacity: 0.7;
+                cursor: pointer;
+            }
+
+            @media screen and (max-width: 800px) {
+                #navi-options-id {
+                    display: none; 
+                }
+                #navi-options-PHONE-menu-btn {
+                    display: block;
+                }
+            }
+
+
+
+
+            #fb-video-container-id {
+                width: auto; 
+                height: auto; 
+                overflow: hidden; 
+                background-color: #595959; 
+                padding: 20px 0px 20px 0px;
+            } 
+            #fb-iframe-id {
+                width: 560px; 
+                height: 315px; 
+                overflow: hidden; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+            }
+            #previous-services-container-id {
+                width: 100%; 
+                height: auto; 
+                background-color: #b3b3b3; 
+                display: flex; 
+                justify-content: center; 
+                padding: 20px 40px 20px 40px;
+            } 
+            #prev-video-1-id {
+                width: 20%; 
+                height: 100%; 
+                display: block; 
+                overflow: hidden; 
+                cursor: pointer; 
+                border-radius: 20px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+                transition: all .2s ease-in-out;
+            }
+            #prev-video-1-id:hover {
+                filter: drop-shadow(8px 8px 10px #737373) sepia(50%);
+                transition: 0.3s;
+            }
+            #prev-video-2-id {
+                width: 20%; 
+                height: 100%; 
+                display: block; 
+                overflow: hidden; 
+                cursor: pointer; 
+                border-radius: 20px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+                margin: 0px 0px 0px 60px;
+                transition: all .2s ease-in-out;
+            }
+            #prev-video-2-id:hover {
+                filter: drop-shadow(8px 8px 10px #737373) sepia(50%);;
+                transition: 0.3s;
+            }
+            #prev-video-3-id {
+                width: 20%; 
+                height: 100%; 
+                display: block; 
+                overflow: hidden; 
+                cursor: pointer; 
+                border-radius: 20px; 
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+                margin: 0px 0px 0px 60px;
+                transition: all .2s ease-in-out;
+            }
+            #prev-video-3-id:hover {
+                filter: drop-shadow(8px 8px 10px #737373) sepia(50%);;
+                transition: 0.3s;
+            }
+            @media screen and (max-width: 800px) {
+                #fb-video-container-id {
+                    padding: 0px;
+                }
+                #fb-iframe-id {
+                    width: 100%; 
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.0), 0 6px 20px 0 rgba(0, 0, 0, 0.0);
+                }
+
+                #previous-services-container-id {
+                    display: block;
+                }
+                #prev-video-1-id {
+                    margin: 40px auto;
+                    width: 70%; 
+                }
+                #prev-video-2-id {
+                    margin: 40px auto;
+                    width: 70%; 
+                }
+                #prev-video-3-id {
+                    margin: 40px auto;
+                    width: 70%; 
+                }
+            }
+
+
+
+
+            #footer-container-id {
+                bottom: 0; 
+                width: 100%; 
+                height: 150px; 
+                display: block; 
+                overflow: hidden; 
+            }
+            #footer-section-1 {
+                width: 100%; 
+                height: 50%; 
+                overflow: hidden; 
+                overflow: hidden; 
+                display: flex;
+            }
+            #footer-address-id {
+                width: 50%; 
+                height: 100%; 
+                overflow: hidden; 
+                float: left;
+                transition: all .2s ease-in-out;
+            }
+            #footer-address-id:hover {
+                background-color: #cce5ff;
+                transition: 0.3s;
+            }
+            #footer-facebook-id {
+                width: 50%; 
+                height: 100%; 
+                overflow: hidden; 
+                float: left;
+                transition: all .2s ease-in-out;
+            }
+            #footer-facebook-id:hover {
+                background-color: #cce5ff;
+                transition: 0.3s;
+            }
+            #footer-section-2 {
+                width: 100%; 
+                height: 50%; 
+                overflow: hidden; 
+                overflow: hidden; 
+                display: flex; 
+                background-color: #CCD3DE;
+            }
+            #footer-phone-id {
+                width: 33%; 
+                height: 100%; 
+                overflow: hidden; 
+                float: left;
+                transition: all .2s ease-in-out;
+            }
+            #footer-phone-id:hover {
+                background-color: #cce5ff;
+                transition: 0.3s;
+            }
+            #footer-fax-id {
+                width: 33%; 
+                height: 100%; 
+                overflow: hidden; 
+                float: left;
+            }
+            #footer-email-id {
+                width: 33%; 
+                height: 100%; 
+                overflow: hidden; 
+                float: left; 
+                transition: all .2s ease-in-out;
+            }
+            #footer-email-id:hover {
+                background-color: #cce5ff;
+                transition: 0.3s;
+            }
+            
+            @media screen and (max-width: 800px) {
+                #footer-container-id {
+                    height: auto;
+                }
+                #footer-section-1 {
+                    display: block; 
+                    padding: 10px; 
+                }
+                #footer-address-id {
+                    width: 100%; 
+                    margin: 0px 0px 10px 0px;
+                }
+                #footer-facebook-id {
+                    width: 100%; 
+                    margin: 0px 0px 10px 0px;
+                }
+                #footer-section-2 {
+                    display: block; 
+                    padding: 10px; 
+                }
+                #footer-phone-id {
+                    width: 100%; 
+                    margin: 0px 0px 10px 0px;
+                }
+                #footer-fax-id {
+                    width: 100%; 
+                    margin: 0px 0px 10px 0px;
+                }
+                #footer-email-id {
+                    width: 100%; 
+                    margin: 0px 0px 10px 0px;
+                }
+            }
+
+
+            #form-fields-allAssets-container-flex {
+                display: flex;
+                width: 100%; 
+                overflow: hidden; 
+                padding: 20px 80px 20px 80px; 
+            }
+            #form-fields-allAssets-container-block {
+                display: block;
+                width: 100%; 
+                overflow: hidden; 
+                padding: 20px 80px 20px 80px; 
+            }
+            @media screen and (max-width: 800px) {
+                #form-fields-allAssets-container-flex {
+                    display: block;
+                    padding: 20px;
+                }
+                #form-fields-allAssets-container-block {
+                    display: block;
+                    padding: 20px;
+                }
+            }
+
+
+            #currentMember-memberRegister-btns-container {
+                display: flex; 
+                width: 100%; 
+                overflow: hidden; 
+                margin: 30px 0px 0px 0px; 
+                padding: 10px; 
+            }
+            .container-50per-class {
+                display: block; 
+                width: 50%; 
+                overflow: hidden; 
+            } 
+            @media screen and (max-width: 800px) {
+                #currentMember-memberRegister-btns-container {
+                    display: block;
+                }
+                .container-50per-class {
+                    margin: 0px 0px 30px 0px;
+                    width: 100%; 
+                }
+            }
+
+
+            .cls-1-1,.cls-2-1{
+                fill:none;
+                stroke:#000;
+                stroke-miterlimit:10;
+            } 
+            .cls-1-1{
+                stroke-width:16px;
+            }
+            .cls-2-1{
+                stroke-width:13px;
+            }
+
+            .cls-1-2{
+                stroke:#000;
+                stroke-miterlimit:10;
+            }
+
+
+            .iframe-class-2 {
+                display: block; 
+                width: 100%; 
+                overflow: hidden; 
+                padding: 20px;
+            }
+            @media screen and (max-width: 800px) {
+                .iframe-class-2 {
+                    padding: 5px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- THEN PHONE VERSION IS OPEN -->
+        <div id="PHONE"><b>P</b></div>
+
+
+        <div class="erThang-container">
+            <!-- NAVI BAR -->
+            <div id="navi-bar-container-id">
+                <div id="home-img-icon-id">
+                    <a href="" style="text-decoration: none; color: black;">
+                        <img width="200px" height="65px" src="https://i.ibb.co/4N4Fqs2/website-navig-logo.png">
+                    </a>
+                </div>
+
+                <div id="navi-options-id">
+                    <!-- HOME -->
+                    <div id="navi-btn-id">
+                        <a href="" style="text-decoration: none; color: black;">
+                            <p>HOME</p>
+                        </a>
+                    </div>
+
+                    <!-- ABOUT US -->
+                    <div id="navi-btn-id">
+                        <a href="" style="text-decoration: none; color: black;">
+                            <p>ABOUT US</p>
+                        </a>
+                    </div>
+
+                    <!-- STREAMING -->
+                    <div id="navi-btn-id">
+                        <a href="" style="text-decoration: none; color: black;">
+                            <p>STREAMING</p>
+                        </a>
+                    </div>
+
+                    <!-- PRAYER -->
+                    <div id="navi-btn-id">
+                        <a href="" style="text-decoration: none; color: black;">
+                            <p>PRAYER</p>
+                        </a>
+                    </div>
+                
+                    <!-- EVENTS -->
+                    <div id="navi-btn-id">
+                        <a href="" style="text-decoration: none; color: black;">
+                            <p>EVENTS</p>
+                        </a>
+                    </div>
+                
+                    <!-- GIVE -->
+                    <div id="navi-btn-id">
+                        <a href="" style="text-decoration: none; color: black;">
+                            <p>GIVE</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="navi-options-PHONE-menu-btn">
+                    <div style="float: right; width: 55px; height: 90px; overflow: hidden; padding: 0px 20px 0px 0px;">
+                        <svg id="Layer_12" data-name="Layer 12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.69 132.69">
+                            <circle class="cls-1-1" cx="66.35" cy="66.35" r="58.35"/>
+                            <line class="cls-2-1" x1="36.83" y1="44.11" x2="95.82" y2="44.11"/>
+                            <line class="cls-2-1" x1="36.85" y1="67.12" x2="95.84" y2="67.12"/>
+                            <line class="cls-2-1" x1="36.85" y1="90.11" x2="95.84" y2="90.11"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- HEADER - EVENTS -->
+            <img width="100%" src="file:///Users/jbharrington/Desktop/Rock%20Church/Website%20Draft%20Rock/Code%20Files/Homepage%20Image%20Assets/events%20header.png">
+
+            <p class="h3" style="color: black; text-align: center; margin: 20px 0px 0px 0px;">View our events calendar below:</p>
+            <center><hr style="width: 90%; height: 2px; margin: 20px 0px 20px 0px;"></center>
+
+            <div class="iframe-class-2">
+                <iframe src="https://calendar.google.com/calendar/embed?src=cc1cfc9c4bf35fe3a0d613d93aec31185c1cdb43dde6f1a447c4fdbd3c80a8cb%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+            </div>
+            
+            <!-- BLANK SPACE -->
+            <div style="width: 100%; height: 200px;"></div>
+
+
+
+
+            <!-- FOOTER -->
+            <p style="text-align: center;">Click address in footer below to view our location </p>
+            <div id="footer-container-id">
+                <!-- TOP -->
+                <div id="footer-section-1">
+                    <!-- ADDRESS -->
+                    <div id="footer-address-id">
+                        <a style="text-decoration: none; color: black;" href="https://www.google.com/maps/dir/37.0638848,-76.3068416/340+Tabbs+Ln,+Newport+News,+VA+23602/@37.0833724,-76.5601113,11z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x89b0794caef9302b:0xe016be1178967e37!2m2!1d-76.5320214!2d37.1215572"><p style="text-align: center; margin: 20px 0px 0px 0px;" class="h5">340 Tabbs Lane, Newport News, Va 23602</p></a>
+                    </div>
+
+                    <!-- FACEBOOK -->
+                    <div id="footer-facebook-id">
+                        <a style="text-decoration: none; color: black;" href="https://www.facebook.com/rock.church.585"><p style="text-align: center; margin: 20px 0px 0px 0px;" class="h5">Follow us on <b>Facebook</b></p></a>
+                    </div>
+                </div>
+
+                <!-- BOTTOM -->
+                <div id="footer-section-2">
+                    <!-- PHONE -->
+                    <div id="footer-phone-id">
+                        <a style="text-decoration: none; color: black;" href="tel:757-874-3255"><p style="text-align: center; margin: 20px 0px 0px 0px;" class="h5">Phone: 757-874-3255</p></a>
+                    </div>
+
+                    <!-- FAX -->
+                    <div id="footer-fax-id">
+                        <a style="text-decoration: none; color: black;"><p style="text-align: center; margin: 20px 0px 0px 0px;" class="h5">Fax: 757-874-6623</p></a>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div id="footer-email-id">
+                        <a style="text-decoration: none; color: black;" href="mailto: Rockchurchnn@verizon.net"><p style="text-align: center; margin: 20px 0px 0px 0px;" class="h5">Rockchurchnn@verizon.net</p></a>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- STAY INSIDE HERE -->
+
+
+        <script>
+            //SUBMIT REQUEST LOGIC 
+            var submit_btn = document.getElementById("submit-btn-id"); 
+            var firstName = document.getElementById("first-name-id");
+            var lastName = document.getElementById("last-name-id");
+            var phoneNumber = document.getElementById("phone-number-id");
+            var prayerRequest = document.getElementById("prayer-request-id");
+            var praiseReport = document.getElementById("praise-report-id");
+            function submit_prayerRequest() {
+                //CHECK ALL FIELDS 
+                //  //CHECK FIRST NAME 
+                if (firstName.value == "" || lastName.value == "" || phoneNumber.value == "") {
+                    alert("Please complete at least the following fields: First Name, Last Name, Phone Number & Prayer Request"); 
+                } else {
+                    //CHECK PRAYER REQUEST 
+                    if (prayerRequest.value == "") {
+                        //CHECK PRAISE REPORT 
+                        if (praiseReport.value == "") {
+                            alert("Please complete at least the following fields: First Name, Last Name, Phone Number & Prayer Request"); 
+                        } else {
+                            document.getElementById("prayerRequest-form-id").submit();
+                        }
+                    } else {
+                        document.getElementById("prayerRequest-form-id").submit();
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
