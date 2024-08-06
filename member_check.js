@@ -1,7 +1,7 @@
 
 function member_email_check() {
     if (document.getElementById("email-id").value == "jb440422@gmail.com" || document.getElementById("email-id").value == "jamesharrington.jbh3@gmail.com" ||
-document.getElementById("email-id").value == "tajaglover88@gmail.com" document.getElementById("email-id").value == "colleenalleyne@hotmail.com" || document.getElementById("email-id").value == "ikitty3@gmail.com" ||
+document.getElementById("email-id").value == "tajaglover88@gmail.com" || document.getElementById("email-id").value == "colleenalleyne@hotmail.com" || document.getElementById("email-id").value == "ikitty3@gmail.com" ||
 document.getElementById("email-id").value == "mingos35@verizon.net" || document.getElementById("email-id").value == "gboydsr@verizon.net" || document.getElementById("email-id").value == "tasha916@gmail.com" || document.getElementById("email-id").value == "journeybrooks13@gmail.com" || document.getElementById("email-id").value == "noweaponformed57@gmail.com" || document.getElementById("email-id").value == "vickieelaine666@yahoo.com" || document.getElementById("email-id").value == "lcampbell320@yahoo.com" || document.getElementById("email-id").value == "impactseed@yahoo.com" || document.getElementById("email-id").value == "mcave1999@gmail.com" || document.getElementById("email-id").value == "mardunmoodie@gmail.com" || document.getElementById("email-id").value == "felespn@yahoo.com" ||
 document.getElementById("email-id").value == "eedwardstrina@yahoo.com" || document.getElementById("email-id").value == "nfairfax@censuschannel.com" || document.getElementById("email-id").value == "wllsrve@aol.com" ||
 document.getElementById("email-id").value == "zernnak@aol.com" ||
